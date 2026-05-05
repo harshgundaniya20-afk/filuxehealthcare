@@ -1,0 +1,109 @@
+/* ===== HERO ===== */
+
+.hero {
+	background: linear-gradient(to right, #0a2647, #144272);
+	color: white;
+	text-align: center;
+	padding: 100px 20px;
+}
+
+.hero h1 {
+	font-size: 40px;
+	margin-bottom: 15px;
+}
+
+.hero p {
+	font-size: 18px;
+	max-width: 600px;
+	margin: auto;
+	opacity: 0.9;
+}
+
+/* ===== OVERVIEW ===== */
+
+.overview {
+	padding: 80px 10%;
+	text-align: center;
+	background: #f8fbff;
+}
+
+.overview h2 {
+	font-size: 32px;
+	margin-bottom: 20px;
+	color: #0a2647;
+}
+
+.overview p {
+	max-width: 800px;
+	margin: 10px auto;
+	line-height: 1.7;
+	color: #555;
+}
+
+/* ===== MISSION & VISION ===== */
+
+.missionVision {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	padding: 80px 10%;
+	flex-wrap: wrap;
+}
+
+.card {
+	background: white;
+	padding: 35px;
+	border-radius: 10px;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+	max-width: 350px;
+	text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-8px);
+	cursor: pointer;
+}
+
+.card h3 {
+	color: #144272;
+	margin-bottom: 10px;
+}
+
+/* ===== VALUES ===== */
+
+.values {
+	padding: 80px 10%;
+	text-align: center;
+	background: #f8fbff;
+}
+
+.values h2 {
+	font-size: 32px;
+	margin-bottom: 40px;
+	color: #0a2647;
+}
+
+.valuesGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 30px;
+}
+
+.valueCard {
+	background: white;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+}
+
+.valueCard h4 {
+	color: #144272;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,143 @@
+.container {
+	background: #f8fbff;
+	min-height: 100vh;
+}
+
+/* ===== HERO ===== */
+.hero {
+	background: linear-gradient(120deg, #0a2647, #1b3a6b);
+	color: white;
+	text-align: center;
+	padding: 80px 20px;
+}
+
+.hero h1 {
+	font-size: 34px;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	color: #dbeafe;
+}
+
+/* ===== CARDS WRAPPER ===== */
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 25px;
+	padding: 60px 10%;
+}
+
+/* ===== CARD ===== */
+.card {
+	background: white;
+	padding: 25px;
+	border-radius: 14px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	text-align: center;
+	transition: 0.3s ease;
+	position: relative;
+}
+
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* subtle top border */
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: #0a2647;
+	border-radius: 14px 14px 0 0;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.card:hover::before {
+	opacity: 1;
+}
+
+.card h3 {
+	color: #0a2647;
+	margin-bottom: 5px;
+	font-size: 18px;
+}
+
+.card span {
+	font-size: 14px;
+	color: #6b7280;
+	display: block;
+	margin-bottom: 15px;
+}
+
+/* PHONE BUTTON */
+.phone {
+	display: block;
+	background: #0a2647;
+	color: white;
+	padding: 10px;
+	border-radius: 8px;
+	text-decoration: none;
+	margin-bottom: 10px;
+	transition: 0.3s;
+	font-size: 14px;
+}
+
+.phone:hover {
+	background: #144272;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+	display: block;
+	background: #25d366;
+	color: white;
+	padding: 10px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-size: 14px;
+	transition: 0.3s;
+}
+
+.whatsapp:hover {
+	opacity: 0.9;
+}
+
+/* ===== EXTRA INFO ===== */
+.extra {
+	text-align: center;
+	padding: 40px 10%;
+}
+
+.extra h2 {
+	color: #0a2647;
+	margin-bottom: 15px;
+}
+
+.extra p {
+	margin: 8px 0;
+	color: #555;
+	font-size: 15px;
+}
+
+.extra a {
+	color: #0a2647;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+	.hero h1 {
+		font-size: 26px;
+	}
+
+	.wrapper {
+		padding: 40px 5%;
+	}
+}

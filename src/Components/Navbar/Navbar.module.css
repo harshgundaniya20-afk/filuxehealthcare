@@ -1,0 +1,167 @@
+/* ================= NAVBAR ================= */
+
+.container {
+	background-color: #ffffff;
+	color: #0a2647;
+
+	height: 90px;
+	padding: 0 28px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+	height: 72px;
+	width: auto;
+
+	object-fit: contain;
+	display: block;
+
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
+}
+
+.logo:hover {
+	transform: scale(1.03);
+	opacity: 0.95;
+}
+
+/* ================= NAV LIST ================= */
+
+.navlist {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	transition: all 0.3s ease;
+}
+
+/* ================= NAV ITEMS ================= */
+
+.navItem {
+	text-decoration: none;
+	color: #0a2647;
+
+	font-size: 0.95rem;
+	font-weight: 600;
+
+	position: relative;
+
+	transition: color 0.3s ease;
+}
+
+.navItem:hover {
+	color: #1c7ed6;
+}
+
+/* Underline animation */
+
+.navItem::after {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+
+	width: 0%;
+	height: 2px;
+
+	background-color: #1c7ed6;
+	border-radius: 10px;
+
+	transition: width 0.3s ease;
+}
+
+.navItem:hover::after {
+	width: 100%;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+}
+
+.bar {
+	width: 25px;
+	height: 3px;
+
+	background-color: #0a2647;
+
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+	.container {
+		height: 75px;
+		padding: 0 18px;
+	}
+
+	.logo {
+		height: 58px;
+		max-width: 180px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.navlist {
+		position: absolute;
+		top: 75px;
+		left: 0;
+
+		width: 100%;
+
+		background: white;
+
+		flex-direction: column;
+		align-items: center;
+
+		gap: 22px;
+		padding: 24px 0;
+
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+		opacity: 0;
+		transform: translateY(-10px);
+		pointer-events: none;
+
+		transition:
+			opacity 0.3s ease,
+			transform 0.3s ease;
+	}
+
+	.navlist.active {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+}
+
+/* ACTIVE PAGE */
+
+.activeLink {
+	color: #1c7ed6;
+	font-weight: 700;
+}
+
+.activeLink::after {
+	width: 100%;
+}
