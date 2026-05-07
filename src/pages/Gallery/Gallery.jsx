@@ -13,9 +13,6 @@ function Gallery() {
 
 	return (
 		<div className={styles.container}>
-			<h1 className={styles.title}>Our Products</h1>
-			<p className={styles.subtitle}>A glimpse of our healthcare solutions</p>
-
 			<div className={styles.grid}>
 				{images.map((item, index) => (
 					<div key={index} className={styles.card}>
