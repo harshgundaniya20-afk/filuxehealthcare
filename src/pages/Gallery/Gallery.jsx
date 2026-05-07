@@ -1,14 +1,14 @@
 import styles from "./Gallery.module.css";
 
-import clowfy from "../../assets/clowfy.jpeg";
-import fizole from "../../assets/fizole.jpeg";
-import gloX from "../../assets/glo-x.jpeg";
+import img1 from "../../assets/gallary/img1.jpeg";
+import img2 from "../../assets/gallary/img2.jpeg";
+import img3 from "../../assets/gallary/img3.jpeg";
 
 function Gallery() {
 	const images = [
-		{ src: clowfy, name: "Clowfy" },
-		{ src: fizole, name: "Fizole" },
-		{ src: gloX, name: "Glo-X" },
+		{ src: img1, name: "Clowfy" },
+		{ src: img2, name: "Fizole" },
+		{ src: img3, name: "Glo-X" },
 	];
 
 	return (
@@ -20,9 +20,6 @@ function Gallery() {
 				{images.map((item, index) => (
 					<div key={index} className={styles.card}>
 						<img src={item.src} alt={item.name} />
-						<div className={styles.overlay}>
-							<h3>{item.name}</h3>
-						</div>
 					</div>
 				))}
 			</div>

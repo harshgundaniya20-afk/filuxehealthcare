@@ -8,7 +8,7 @@
 	background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 50%, #f8fbff 100%);
 }
 
-/* Glow Effects */
+/* ================= BACKGROUND GLOW ================= */
 
 .container::before,
 .container::after {
@@ -80,10 +80,9 @@
 
 	border: none;
 	outline: none;
-
 	border-radius: 16px;
 
-	background: rgba(255, 255, 255, 0.9);
+	background: rgba(255, 255, 255, 0.92);
 
 	backdrop-filter: blur(12px);
 
@@ -117,7 +116,7 @@
 		0 14px 30px rgba(10, 38, 71, 0.12);
 }
 
-/* Custom Icon */
+/* ================= DROPDOWN ICON ================= */
 
 .dropdownIcon {
 	position: absolute;
@@ -141,8 +140,8 @@
 	z-index: 1;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 30px;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 28px;
 }
 
 /* ================= CARD ================= */
@@ -150,22 +149,27 @@
 .card {
 	position: relative;
 	overflow: hidden;
-	border-radius: 22px;
+	border-radius: 24px;
 	cursor: pointer;
 
-	background: white;
+	background: rgba(255, 255, 255, 0.95);
 
 	box-shadow:
 		0 10px 30px rgba(0, 0, 0, 0.08),
 		0 4px 10px rgba(0, 0, 0, 0.03);
 
-	transition: all 0.4s ease;
+	transition:
+		transform 0.4s ease,
+		box-shadow 0.4s ease;
+
+	padding: 14px;
 }
 
 .card:hover {
-	transform: translateY(-10px);
+	transform: translateY(-8px);
+
 	box-shadow:
-		0 20px 45px rgba(10, 38, 71, 0.15),
+		0 22px 50px rgba(10, 38, 71, 0.16),
 		0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -173,32 +177,50 @@
 
 .card img {
 	width: 100%;
-	height: 320px;
-	object-fit: cover;
+	height: auto;
+
+	/* IMPORTANT */
+	object-fit: contain;
+
 	display: block;
+	border-radius: 18px;
+
+	background: #f8fafc;
 
 	transition: transform 0.5s ease;
 }
 
+/* Horizontal images */
+.card img[width="landscape"] {
+	aspect-ratio: 16 / 10;
+}
+
+/* Vertical images */
+.card img[width="portrait"] {
+	aspect-ratio: 4 / 5;
+}
+
 .card:hover img {
-	transform: scale(1.08);
+	transform: scale(1.03);
 }
 
 /* ================= OVERLAY ================= */
 
 .overlay {
 	position: absolute;
-	inset: 0;
+	inset: 14px;
 
 	display: flex;
 	align-items: flex-end;
 
-	padding: 24px;
+	padding: 22px;
+
+	border-radius: 18px;
 
 	background: linear-gradient(
 		to top,
-		rgba(10, 38, 71, 0.92),
-		rgba(10, 38, 71, 0.2),
+		rgba(10, 38, 71, 0.9),
+		rgba(10, 38, 71, 0.25),
 		transparent
 	);
 
@@ -218,6 +240,13 @@
 	font-weight: 700;
 	margin: 0;
 	letter-spacing: 0.3px;
+
+	transform: translateY(10px);
+	transition: transform 0.3s ease;
+}
+
+.card:hover .overlay h3 {
+	transform: translateY(0);
 }
 
 /* ================= EMPTY ================= */
@@ -228,6 +257,14 @@
 	font-size: 18px;
 	color: #6b7280;
 	margin-top: 20px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+	.grid {
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	}
 }
 
 /* ================= MOBILE ================= */
@@ -243,6 +280,7 @@
 
 	.subtitle {
 		font-size: 14px;
+		margin-bottom: 35px;
 	}
 
 	.dropdownWrapper {
@@ -250,7 +288,23 @@
 		max-width: 280px;
 	}
 
-	.card img {
-		height: 250px;
+	.grid {
+		gap: 20px;
+	}
+
+	.card {
+		padding: 10px;
+		border-radius: 20px;
+	}
+
+	.overlay {
+		inset: 10px;
+		padding: 18px;
+		opacity: 1;
+	}
+
+	.overlay h3 {
+		font-size: 18px;
+		transform: translateY(0);
 	}
 }

@@ -1,73 +1,84 @@
 .container {
-	padding: 80px 10%;
-	background-color: #f8fbff;
 	min-height: 100vh;
-	text-align: center;
+	padding: 100px 8%;
+	background: linear-gradient(to bottom, #f8fbff, #eef5ff);
 }
 
-/* Title */
 .title {
-	font-size: 34px;
-	color: #0a2647;
+	font-size: 3rem;
 	font-weight: 700;
+	text-align: center;
+	color: #0f172a;
 	margin-bottom: 10px;
+	letter-spacing: 1px;
 }
 
-/* Subtitle */
 .subtitle {
-	color: #6b7280;
-	margin-bottom: 40px;
+	text-align: center;
+	font-size: 1.1rem;
+	color: #64748b;
+	margin-bottom: 60px;
 }
 
-/* Grid */
+/* Adjustable Masonry Grid */
 .grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 25px;
+	column-count: 3;
+	column-gap: 20px;
 }
 
-/* Card */
 .card {
-	position: relative;
-	border-radius: 16px;
+	break-inside: avoid;
+	margin-bottom: 20px;
+	border-radius: 20px;
 	overflow: hidden;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-	cursor: pointer;
+	background: #fff;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
-/* Image */
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
 .card img {
 	width: 100%;
-	height: 260px;
+	height: auto;
+	display: block;
 	object-fit: cover;
+	border-radius: 20px;
 	transition: transform 0.4s ease;
 }
 
-/* Overlay */
-.overlay {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: linear-gradient(to top, rgba(10, 38, 71, 0.8), transparent);
-	color: white;
-	padding: 15px;
-	text-align: left;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
-/* Hover */
 .card:hover img {
-	transform: scale(1.08);
+	transform: scale(1.03);
 }
 
-.card:hover .overlay {
-	opacity: 1;
+/* Tablet */
+@media (max-width: 992px) {
+	.grid {
+		column-count: 2;
+	}
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-	.card img {
-		height: 200px;
+/* Mobile */
+@media (max-width: 600px) {
+	.container {
+		padding: 80px 5%;
+	}
+
+	.title {
+		font-size: 2.2rem;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		margin-bottom: 40px;
+	}
+
+	.grid {
+		column-count: 1;
 	}
 }

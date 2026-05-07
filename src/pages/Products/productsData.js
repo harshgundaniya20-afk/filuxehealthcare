@@ -1,6 +1,7 @@
 import clowfy from "../../assets/clowfy.jpeg";
 import fizole from "../../assets/fizole.jpeg";
 import gloX from "../../assets/glo-x.jpeg";
+import canistate from "../../assets/canistate.jpeg";
 
 const productsData = {
 	creams: [
@@ -21,6 +22,12 @@ const productsData = {
 			image: fizole,
 			composition: "Sertaconazole Nitrate",
 			strength: "2%",
+		},
+		{
+			name: "Canistate-B",
+			image: canistate,
+			composition: "ab",
+			strength: "2.5%",
 		},
 	],
 	shampoos: [],
